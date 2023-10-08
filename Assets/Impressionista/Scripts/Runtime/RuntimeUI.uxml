@@ -1,0 +1,82 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Impressionista/Scripts/Styles/runtime.uss?fileID=7433441132597879392&amp;guid=484a8576571e7ba49834b23fc9b1a43c&amp;type=3#runtime" />
+    <ui:VisualElement name="MainContainer" style="background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: flex-end; justify-content: space-between; margin-left: 15px; margin-right: 15px; margin-top: 0; margin-bottom: 15px;">
+        <ui:VisualElement name="ColumnLeft" class="runtimeui-column-left">
+            <ui:VisualElement name="CameraPanel" class="runtimeui-panel" style="align-self: flex-start; align-items: stretch;">
+                <ui:Foldout text="Camera" name="Camera" value="true" class="runtimeui-panel-header" style="white-space: normal; -unity-font-style: normal;">
+                    <ui:VisualElement name="PreviewContainer" class="runtimeui-subpanel" style="white-space: nowrap; margin-left: 0; background-image: resource(&apos;Textures/MonitorRT&apos;); -unity-background-image-tint-color: rgba(0, 0, 0, 0); background-color: rgb(36, 36, 36); border-bottom-left-radius: 7px; border-bottom-right-radius: 7px;">
+                        <ui:Label tabindex="-1" display-tooltip-when-elided="false" name="Monitor" style="width: 340px; height: 340px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 5px; padding-left: 45px; padding-right: 45px; padding-top: 45px; padding-bottom: 45px; white-space: normal; -unity-text-align: middle-center; -unity-font-style: normal; background-color: rgb(46, 46, 46); align-self: center; background-image: resource(&apos;Textures/MonitorRT&apos;);" />
+                        <ui:Button name="Calibration" text="Start Calibration" class="runtimeui-button" style="display: flex;" />
+                        <ui:Label text="Adjust the threshold value to help the camera frame your painting area. Click &quot;Frame&quot; when ready." name="SettingsTip" style="white-space: normal; -unity-text-align: upper-center; color: rgb(159, 159, 159); font-size: 11px; padding-left: 5px; padding-right: 5px; padding-top: 0; padding-bottom: 0; margin-right: 0; margin-left: 0; margin-top: 0; margin-bottom: 0; display: flex;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="SettingsContainer" class="runtimeui-subpanel-content runtimeui-subpanel">
+                        <ui:Label tabindex="-1" text="Settings" name="Label" class="runtimeui-label runtimeui-group" />
+                        <ui:SliderInt value="126" high-value="255" name="Threshold" show-input-field="false" focusable="true" label="Threshold" style="border-top-left-radius: 2px; border-bottom-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px;" />
+                        <ui:DropdownField label="Webcam" index="0" name="Webcam" focusable="true" />
+                        <ui:DropdownField label="Resolution" index="1" choices="360x640,1280x720,1920x1080" name="Resolution" />
+                        <ui:Button name="Frame" text="Frame" class="runtimeui-button" />
+                    </ui:VisualElement>
+                </ui:Foldout>
+                <ui:VisualElement name="Icon" class="runtimeui-panel-icon" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ColumnRight" class="runtimeui-column-right">
+            <ui:VisualElement name="ModelPanel" class="runtimeui-panel">
+                <ui:Foldout text="Model" name="Model" class="runtimeui-panel-header" style="flex-grow: 1; flex-shrink: 0;">
+                    <ui:VisualElement name="ModelContainer" class="runtimeui-subpanel runtimeui-subpanel-content" style="flex-direction: column; justify-content: space-between;">
+                        <ui:VisualElement style="flex-shrink: 0; width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; flex-direction: row;">
+                            <ui:Label tabindex="-1" text="Model Name" name="ModelName" style="flex-grow: 0; min-width: 200px; flex-shrink: 1; -unity-text-align: middle-left; background-color: rgb(36, 36, 36); border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 10px; height: 50px; width: 100%; margin-top: 8px; margin-bottom: 8px; margin-left: 0; margin-right: 10px; overflow: hidden;" />
+                            <ui:Button name="LoadModel" class="runtimeui-button" style="background-image: resource(&apos;Textures/UI/icons8-upload-96&apos;); width: 50px; height: 50px; -unity-background-scale-mode: scale-to-fit; -unity-slice-left: 1; -unity-slice-top: 1; -unity-slice-right: 1; -unity-slice-bottom: 1; -unity-slice-scale: 10px;" />
+                        </ui:VisualElement>
+                        <ui:Label tabindex="-1" text="Settings" name="Label" class="runtimeui-label runtimeui-group" />
+                        <ui:Vector3IntField label="Position Offset" name="ModelPositionOffset" />
+                        <ui:Vector3IntField label="Rotation Offset" name="ModelRotationOffset" />
+                        <ui:DropdownField label="Material" index="0" name="Material" focusable="true" />
+                    </ui:VisualElement>
+                </ui:Foldout>
+                <ui:VisualElement name="Icon" class="runtimeui-panel-icon" style="background-image: resource(&apos;Textures/UI/icons8-cube-96&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="CapturesPanel" class="runtimeui-panel" style="flex-shrink: 1;">
+                <ui:Foldout text="Gallery" name="Gallery" class="runtimeui-panel-header">
+                    <ui:VisualElement name="GalleryContainer" class="runtimeui-subpanel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                        <ui:ScrollView name="GalleryScrollView" mouse-wheel-scroll-size="100" horizontal-scroller-visibility="Hidden">
+                            <ui:VisualElement name="CapturesContainer" style="background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-wrap: wrap; justify-content: flex-start;">
+                                <ui:VisualElement name="CameraPreview" class="runtimeui-gallery-capture" style="flex-grow: 0; background-color: rgb(37, 37, 37); background-image: resource(&apos;Textures/UI/icons8-camera-96&apos;); -unity-background-image-tint-color: rgb(166, 166, 166); -unity-slice-left: 1; -unity-slice-top: 1; -unity-slice-right: 1; -unity-slice-bottom: 1; -unity-slice-scale: 25px;" />
+                                <ui:Button name="CameraSwitch" class="runtimeui-gallery-capture-remove" style="background-image: resource(&apos;Textures/UI/icons8-power-96&apos;); top: 0; right: 0; left: 87px; padding-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0;" />
+                            </ui:VisualElement>
+                        </ui:ScrollView>
+                        <ui:Button name="Capture" text="Capture" class="runtimeui-button">
+                            <ui:VisualElement name="Icon" class="runtimeui-panel-icon" style="left: 106px; top: 12px; background-image: resource(&apos;Textures/UI/icons8-camera-96&apos;);" />
+                        </ui:Button>
+                        <ui:Button name="Variation" text="Generate Variation" class="runtimeui-variation-button">
+                            <ui:VisualElement name="Icon" class="runtimeui-panel-icon" style="left: 64px; top: 12px; background-image: resource(&apos;Textures/UI/icons8-sparkling-96 (1)&apos;);" />
+                        </ui:Button>
+                    </ui:VisualElement>
+                </ui:Foldout>
+                <ui:VisualElement name="Icon" class="runtimeui-panel-icon" style="background-image: resource(&apos;Textures/UI/icons8-image-96&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="MessageBox" class="runtimeui-panel-message-box" style="display: none;">
+        <ui:Label name="MessageText" text="Message" class="runtimeui-panel-message-text" style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-around; align-items: center; width: 200px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <ui:Button text="OK" display-tooltip-when-elided="true" name="MessageConfirm" class="runtimeui-button" style="width: 70px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="DeleteModal" class="runtimeui-panel-message-box" style="display: none;">
+        <ui:Label name="Label" text="This will permanently remove the file." class="runtimeui-panel-message-text" style="-unity-font-style: normal; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-around; align-items: center; width: 200px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <ui:Button text="OK" display-tooltip-when-elided="true" name="DeleteConfirm" class="runtimeui-button" style="width: 70px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+            <ui:Button text="Cancel" display-tooltip-when-elided="true" name="DeleteCancel" class="runtimeui-button" style="width: 100px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="KeyModal" class="runtimeui-panel-message-box" style="display: none; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
+        <ui:Label name="Label" text="Paste your OpenAI API Key below. &#10;&#10;Warning:&#10;It is strongly recomended that a usage limit is set on the OpenAI API account to prevent unwanted costs due to possible bugs." class="runtimeui-panel-message-text" style="-unity-font-style: normal; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        <ui:TextField picking-mode="Ignore" password="true" name="KeyTextField" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        <ui:Toggle text="Remember Key" name="KeyRememberToggle" style="color: rgb(255, 255, 255); font-size: 16px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-around; align-items: center; width: 200px; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;">
+            <ui:Button text="OK" display-tooltip-when-elided="true" name="KeyConfirm" class="runtimeui-button" style="width: 70px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+            <ui:Button text="Cancel" display-tooltip-when-elided="true" name="KeyCancel" class="runtimeui-button" style="width: 100px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
