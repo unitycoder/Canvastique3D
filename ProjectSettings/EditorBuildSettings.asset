@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Impressionista/Scenes/Main.unity
+    path: Assets/Canvastique3D/Scenes/Main.unity
     guid: 66a4265d81c42e84aa0a44f540c1e1f5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6196262da76c9654aaa8dee71980aef6,

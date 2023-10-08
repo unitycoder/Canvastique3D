@@ -1203,7 +1203,8 @@ GameObject:
   m_Component:
   - component: {fileID: 982966759}
   - component: {fileID: 982966761}
-  - component: {fileID: 982966760}
+  - component: {fileID: 982966763}
+  - component: {fileID: 982966762}
   m_Layer: 0
   m_Name: FreeLook Camera
   m_TagString: Untagged
@@ -1229,22 +1230,6 @@ Transform:
   - {fileID: 1910677570}
   m_Father: {fileID: 190226876}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &982966760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 982966758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb7194dc27b9df64c8beca7482ee8e0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerIndex: -1
-  AutoEnableInputs: 1
-  XYAxis: {fileID: -5850300891071422560, guid: f0a122c3ddcdc1c478550aec8307ba04, type: 3}
-  ZAxis: {fileID: 0}
 --- !u!114 &982966761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1303,7 +1288,7 @@ MonoBehaviour:
       m_LegacyHeadingDefinition: -1
       m_LegacyVelocityFilterStrength: -1
   m_YAxisRecentering:
-    m_enabled: 1
+    m_enabled: 0
     m_WaitTime: 1
     m_RecenteringTime: 2
     m_LegacyHeadingDefinition: -1
@@ -1350,6 +1335,37 @@ MonoBehaviour:
   - {fileID: 1914699509}
   - {fileID: 295773289}
   - {fileID: 1910677571}
+--- !u!114 &982966762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982966758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dc70ddd9c1e984cb7761cbc01497c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSensitivity: 0.001
+  minZoomPercent: 0.1
+  maxZoomPercent: 3
+--- !u!114 &982966763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982966758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7194dc27b9df64c8beca7482ee8e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerIndex: -1
+  AutoEnableInputs: 1
+  XYAxis: {fileID: -5850300891071422560, guid: f0a122c3ddcdc1c478550aec8307ba04, type: 3}
+  ZAxis: {fileID: -1421506958368539715, guid: f0a122c3ddcdc1c478550aec8307ba04, type: 3}
 --- !u!1 &1012758352
 GameObject:
   m_ObjectHideFlags: 0

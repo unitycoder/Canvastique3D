@@ -143,6 +143,7 @@ namespace Canvastique3D
             materialController.SetTransform(perspectiveProjection.GetMatrix(canvasRecognitionDLL.Points, webcamController.Width, webcamController.Height));
 
             EventManager.instance.TriggerStopCalibration();
+            EventManager.instance.TriggerFramed();
         }
 
         // Resets the transform and reinitializes the points and matrix

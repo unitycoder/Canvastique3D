@@ -92,7 +92,6 @@ namespace Canvastique3D
                 EventManager.instance.TriggerStopCamera();
             });
 
-            EventManager.instance.OnCameraStarted += HandleCameraStarted;
             EventManager.instance.OnCameraStopped += HandleCameraStopped;
 
             calibrationButton = root.Q<Button>("Calibration");
@@ -102,6 +101,7 @@ namespace Canvastique3D
             frameButton = root.Q<Button>("Frame");
             frameButton.clicked += EventManager.instance.TriggerFrame;
             EventManager.instance.OnCalibrationStopped += HandleCalibrationStopped;
+            EventManager.instance.OnFramed += HandleFramed;
 
             modelContainer = root.Q<VisualElement>("ModelContainer");
             modelContainer.RegisterCallback<PointerOverEvent>(OnPointerOver);
@@ -299,9 +299,9 @@ namespace Canvastique3D
             SaveThresholdValue();
         }
 
-        private void HandleCameraStarted()
+        private void HandleFramed()
         {
-
+            captureButton.SetEnabled(true);
         }
 
         private void HandleCameraStopped()

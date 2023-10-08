@@ -16,10 +16,10 @@
                 },
                 {
                     "name": "Zoom",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "0baa883b-bc30-4121-b38d-4f7aeacdde1a",
-                    "expectedControlType": "",
-                    "processors": "",
+                    "expectedControlType": "Axis",
+                    "processors": "Normalize(min=-1,max=1)",
                     "interactions": "",
                     "initialStateCheck": true
                 }
@@ -59,37 +59,15 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "b32c4f10-969a-4a83-be94-0a7921c9b860",
-                    "path": "1DAxis(whichSideWins=1)",
+                    "name": "",
+                    "id": "3c811f72-9df4-4fa5-bba6-3c20918153a0",
+                    "path": "<Mouse>/scroll/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "f9df758c-8e62-4bec-9123-e3d5a9528570",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control scheme",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "3929eb69-6491-4143-b877-7943985ea847",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Control scheme",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }
