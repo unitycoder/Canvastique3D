@@ -212,7 +212,7 @@ namespace Canvastique3D
             if (decision.Value && keyTextField.value != "")
             {
                 keyModal.style.display = DisplayStyle.None;
-                EventManager.instance.TriggerVariation(APIKey);
+                EventManager.instance.TriggerVariation(keyTextField.value);
             } 
             else if (decision.Value && keyTextField.value == "")
             {
