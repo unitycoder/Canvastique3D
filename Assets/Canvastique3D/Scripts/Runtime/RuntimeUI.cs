@@ -314,7 +314,7 @@ namespace Canvastique3D
             {
                 DeselectAllCaptures();
                 var lastCapture = GetLastCapture();
-                StyleBackground styleBackground = lastCapture.resolvedStyle.backgroundImage;
+                StyleBackground styleBackground = lastCapture.style.backgroundImage;
                 EventManager.instance.TriggerLoadCapture(styleBackground.value.texture);
                 lastCapture.AddToClassList("runtimeui-gallery-capture__selected");
                 variationButton.SetEnabled(true);
@@ -429,7 +429,7 @@ namespace Canvastique3D
             {
                 DeselectAllCaptures();
                 var lastCapture = GetLastCapture();
-                StyleBackground styleBackground = lastCapture.resolvedStyle.backgroundImage;
+                StyleBackground styleBackground = lastCapture.style.backgroundImage;
                 EventManager.instance.TriggerLoadCapture(styleBackground.value.texture);
                 lastCapture.AddToClassList("runtimeui-gallery-capture__selected");
                 variationButton.SetEnabled(true);
@@ -448,7 +448,7 @@ namespace Canvastique3D
             HandleError(message);
             DeselectAllCaptures();
             var lastCapture = GetLastCapture();
-            StyleBackground styleBackground = lastCapture.resolvedStyle.backgroundImage;
+            StyleBackground styleBackground = lastCapture.style.backgroundImage;
             EventManager.instance.TriggerLoadCapture(styleBackground.value.texture);
             lastCapture.AddToClassList("runtimeui-gallery-capture__selected");
             variationButton.SetEnabled(true);

@@ -136,7 +136,7 @@ namespace Canvastique3D
             // Read the pixels from the camera's target texture into the painting texture.
             RenderTexture.active = monitorCamera.targetTexture;
             cameraTexture.ReadPixels(new Rect(0, 0, size, size), 0, 0);
-            cameraTexture.Apply();
+            //cameraTexture.Apply();
             RenderTexture.active = null;
 
             fileData = cameraTexture.EncodeToPNG();
