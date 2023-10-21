@@ -472,8 +472,8 @@
 .runtimeui-gallery-capture {
     flex-grow: 0;
     background-color: rgba(0, 0, 0, 0);
-    width: 100px;
-    height: 100px;
+    width: 99px;
+    height: 99px;
     margin-left: 6px;
     margin-right: 6px;
     margin-top: 6px;
